@@ -5,9 +5,9 @@
 <a href="https://badge.fury.io/py/psi-fytotron">
 <img src="https://badge.fury.io/py/psi-fytotron.svg" alt="PyPI version"/></a>
 </p>
-Links to:
-- [Documentation](https://wurDevTim.github.io/PSI-Fytotron-API)
-- [Source Code](https://github.com/wurDevTim/PSI-Fytotron-API)
+
+- [Documentation](https://wurDevTim.github.io/PSI-Fytotron-API) <br>
+- [Source Code](https://github.com/wurDevTim/PSI-Fytotron-API) <br>
 ---
 Photon System Instruments (PSI) develivers equipment accross the globe. 
 Most of their cells are controlled by a fytotron PC, for which they also provide an API.

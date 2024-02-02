@@ -1,0 +1,39 @@
+[project]
+name = "psi-fytotron"
+version = "0.1.2"
+description = "Python API implementation of PSI fytotron API"
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = ["PSI", "fytotron", "API"]
+license = {file = "LICENSE.txt"}
+maintainers = [
+  {name = "NPEC WUR"} # Optional
+]
+
+classifiers = [
+'Development Status :: 3 - Alpha',
+'Intended Audience :: Developers',
+'Intended Audience :: Science/Research',
+'Topic :: Software Development :: Libraries :: Python Modules',
+'Programming Language :: Python :: 3',
+'Programming Language :: Python :: 3 :: Only',
+'Operating System :: OS Independent',
+'Operating System :: Microsoft :: Windows',
+'Operating System :: POSIX',
+'Operating System :: Unix',
+'Operating System :: MacOS',
+]
+
+dependencies = [
+"certifi", 
+"six", 
+"python_dateutil", 
+"urllib3"
+]
+
+[project.urls]  # Optional
+"Homepage" = "https://github.com/wurDevTim/PSI-Fytotron-API"
+
+[build-system]
+requires = ["setuptools>=43.0.0", "wheel"]
+build-backend = "setuptools.build_meta"

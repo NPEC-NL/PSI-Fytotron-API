@@ -1,0 +1,189 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "version": "v1",
+    "title": "PSI Fytotron Rest API",
+    "description": "",
+    "termsOfService": "",
+    "contact": {
+      "name": "",
+      "url": "http://todo",
+      "email": "todo@todo.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://localhost:44339/fyo/rest"
+    }
+  ],
+  "paths": {
+    "/info": {
+      "get": {
+        "tags": [
+          "Fytotron"
+        ],
+        "summary": "Returns all setpoints and actual values in the database.",
+        "operationId": "info",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonInfoResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getvar": {
+      "get": {
+        "tags": [
+          "Fytotron"
+        ],
+        "summary": "Returns the current value of the variable",
+        "operationId": "getvar",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "description": "variable name",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonGetvarResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/setvar": {
+      "post": {
+        "tags": [
+          "Fytotron"
+        ],
+        "summary": "Set the setpoint value",
+        "operationId": "setvar",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "description": "variable name",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "value",
+            "description": "value to se the variable to",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/monitor": {
+      "get": {
+        "tags": [
+          "Fytotron"
+        ],
+        "summary": "Returns the current status of the fytotron",
+        "operationId": "monitor",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonMonitorResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "JsonInfoResult": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/InfoValues"
+        }
+      },
+      "InfoValues": {
+        "required": [
+          ""
+        ],
+        "type": "object",
+        "properties": {
+          "Max": {
+            "type": "number"
+          },
+          "Min": {
+            "type": "number"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "Unit": {
+            "type": "string"
+          },
+          "Value": {
+            "type": "number"
+          }
+        }
+      },
+      "JsonGetvarResult": {
+        "type": "number"
+      },
+      "JsonMonitorResult": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/MonitorValues"
+        }
+      },
+      "MonitorValues": {
+        "required": [
+          ""
+        ],
+        "type": "object",
+        "properties": {
+          "Caption": {
+            "type": "string"
+          },
+          "Message": {
+            "type": "string"
+          },
+          "State": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

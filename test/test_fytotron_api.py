@@ -9,13 +9,13 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 from fytotron import fytotron
 
 
-@patch('fytotron.swagger_client.FytotronApi', return_value=mocks.ApiClientMock())
+@patch('fytotron.fytotron.swagger_client.FytotronApi', return_value=mocks.ApiClientMock())
 class MyTestCase(unittest.TestCase):
 
     def test_init(self, api_mock):
         """Test the class instantiation"""
-        with patch('fytotron.swagger_client.Configuration', return_value=MagicMock()) as mock_context:
-            with patch('fytotron.swagger_client.ApiClient', return_value=mocks.ApiClientMock()):
+        with patch('fytotron.fytotron.swagger_client.Configuration', return_value=MagicMock()) as mock_context:
+            with patch('fytotron.fytotron.swagger_client.ApiClient', return_value=mocks.ApiClientMock()):
                 api = fytotron.Fytotron_API('test', '33')
             mock_context.assert_called_once()
             self.assertEqual(mock_context.return_value.host, 'test:33/fyto/rest')

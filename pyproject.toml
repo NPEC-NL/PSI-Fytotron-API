@@ -1,6 +1,6 @@
 [project]
 name = "psi-fytotron"
-version = "0.1.2"
+version = "0.1.3"
 description = "Python API implementation of PSI fytotron API"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -30,6 +30,9 @@ dependencies = [
 "python_dateutil", 
 "urllib3"
 ]
+
+[tool.setuptools]
+packages = ["fytotron"]
 
 [project.urls]  # Optional
 "Homepage" = "https://github.com/wurDevTim/PSI-Fytotron-API"

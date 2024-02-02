@@ -1,4 +1,4 @@
 # coding: utf-8
-from fytotron import fytotron
-from fytotron import models
-from fytotron import swagger_client
+from . import fytotron
+from . import models
+from . import swagger_client

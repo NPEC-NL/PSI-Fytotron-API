@@ -1,4 +1,4 @@
-# swagger_client.FytotronApi
+# fytotron.swagger_client.FytotronApi
 
 All URIs are relative to *https://localhost:44339/fyo/rest*
 
@@ -19,11 +19,11 @@ Returns the current value of the variable
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from fytotron.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FytotronApi()
+api_instance = fytotron.swagger_client.FytotronApi()
 name = 'name_example' # str | variable name
 
 try:
@@ -53,7 +53,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **info**
 > JsonInfoResult info()
@@ -65,11 +65,11 @@ Returns all setpoints and actual values in the database.
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from fytotron.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FytotronApi()
+api_instance = fytotron.swagger_client.FytotronApi()
 
 try:
     # Returns all setpoints and actual values in the database.
@@ -95,7 +95,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **monitor**
 > JsonMonitorResult monitor()
@@ -107,11 +107,11 @@ Returns the current status of the fytotron
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from fytotron.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FytotronApi()
+api_instance = fytotron.swagger_client.FytotronApi()
 
 try:
     # Returns the current status of the fytotron
@@ -137,7 +137,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
 # **setvar**
 > setvar(name, value)
@@ -149,11 +149,11 @@ Set the setpoint value
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from fytotron.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FytotronApi()
+api_instance = fytotron.swagger_client.FytotronApi()
 name = 'name_example' # str | variable name
 value = 1.2 # float | value to se the variable to
 
@@ -184,5 +184,5 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

@@ -1,4 +1,4 @@
-# swagger_client.GetvarApi
+# fytotron.swagger_client.GetvarApi
 
 All URIs are relative to *https://localhost:44339/fyo/rest*
 
@@ -16,11 +16,11 @@ Returns the current value of the variable
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from fytotron.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.GetvarApi()
+api_instance = fytotron.swagger_client.GetvarApi()
 name = 'name_example' # str | variable name
 
 try:
@@ -50,5 +50,5 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

@@ -25,9 +25,9 @@ Uses a .env file with the following fields:
 URL: <The url or ip-address of your fytotron machine >
 PORT: <Poort on which the fytotron API is available>
 ```
-The nvironment files require one additional depency: `pip install python-dotenv`
-Code:
-https://github.com/wurDevTim/PSI-Fytotron-API/blob/main/example_implementation.py#L2-L32
+The environment files have one additional depency: `pip install python-dotenv`
+Example code:
+https://github.com/wurDevTim/PSI-Fytotron-API/blob/main/example_implementation.py?plain=1#L2-L32
 
 
 ## Contributing

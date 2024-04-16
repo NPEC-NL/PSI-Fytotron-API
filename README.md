@@ -11,8 +11,8 @@
 ---
 Photon System Instruments (PSI) develivers equipment accross the globe. 
 Most of their cells are controlled by a fytotron PC, for which they also provide an API.
-We, the NPEC team believes it's a waist of everyones time if we all have to implement the same code.
-Therefore we created he swagger file and a simple python wrapper you can use to integrate the fytotron API.
+We, the NPEC team, believe it's a waist of everyones time if we all have to implement the same code.
+Therefore we created he swagger file and a simple python wrapper to integrate the fytotron API.
 
 ## Installation 
 `pip install psi-fytotron`  
@@ -24,6 +24,7 @@ Uses a .env file with the following fields:
 ```
 URL: <The url or ip-address of your fytotron machine >
 PORT: <Poort on which the fytotron API is available>
+TOKEN: <Fytotron API access token>
 ```
 The environment files have one additional depency: `pip install python-dotenv`
 Example code:

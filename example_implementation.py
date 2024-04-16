@@ -8,7 +8,7 @@ from fytotron.fytotron import Fytotron_API
 if __name__ == "__main__":
     load_dotenv()
     # Create an instance of the API class
-    api = Fytotron_API(getenv('URL'), getenv('PORT'))
+    api = Fytotron_API(getenv('URL'), getenv('PORT'), getenv('TOKEN'))
 
     # Retreive all values
     variable_list = api.get_all_values()

@@ -6,9 +6,24 @@ import fytotron.models as models
 class Fytotron_API():
     """Wrapper around the automatically  generated swagger client.
        return class instances instead of dictionaries."""
-    def __init__(self, server, poort):
+    def __init__(self, server: str, poort: int, token: str = ''):
+        """
+        Parameters
+        ----------
+            server: str
+                URL of the server
+            poort: int
+                poortnumber of the Fytotron server
+            token: str
+                Token to authenticate with the server
+        Return
+        ----------
+            -
+        """
         self.configuration = swagger_client.Configuration()
         self.configuration.host = f'{server}:{poort}/fyto/rest'
+        if token != '':
+            self.configuration.api_key['X-Auth-Token'] = token
         self.api_instance = swagger_client.FytotronApi(
             swagger_client.ApiClient(self.configuration))
 

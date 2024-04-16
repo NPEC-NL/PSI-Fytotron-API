@@ -49,11 +49,11 @@ Please follow the [installation procedure](#installation--usage) and then run th
 from __future__ import print_function
 import time
 import swagger_client
-from swagger_client.rest import ApiException
+from fytotron.swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.FytotronApi(swagger_client.ApiClient(configuration))
+api_instance = fytotron.swagger_client.FytotronApi(swagger_client.ApiClient(configuration))
 name = 'name_example' # str | variable name
 
 try:
@@ -64,7 +64,7 @@ except ApiException as e:
     print("Exception when calling FytotronApi->getvar: %s\n" % e)
 
 # create an instance of the API class
-api_instance = swagger_client.FytotronApi(swagger_client.ApiClient(configuration))
+api_instance = fytotron.swagger_client.FytotronApi(swagger_client.ApiClient(configuration))
 
 try:
     # Returns all setpoints and actual values in the database.
@@ -74,7 +74,7 @@ except ApiException as e:
     print("Exception when calling FytotronApi->info: %s\n" % e)
 
 # create an instance of the API class
-api_instance = swagger_client.FytotronApi(swagger_client.ApiClient(configuration))
+api_instance = fytotron.swagger_client.FytotronApi(swagger_client.ApiClient(configuration))
 
 try:
     # Returns the current status of the fytotron
@@ -84,7 +84,7 @@ except ApiException as e:
     print("Exception when calling FytotronApi->monitor: %s\n" % e)
 
 # create an instance of the API class
-api_instance = swagger_client.FytotronApi(swagger_client.ApiClient(configuration))
+api_instance = fytotron.swagger_client.FytotronApi(swagger_client.ApiClient(configuration))
 name = 'name_example' # str | variable name
 value = 1.2 # float | value to se the variable to
 

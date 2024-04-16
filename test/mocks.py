@@ -15,14 +15,14 @@ class ApiClientMock():
 
 MOCK_RETURN_INFO = [
     {
-        "Max": 85,
+        "Max": 85.0,
         "Min": 40,
         "Name": "RH_Set",
         "Unit": "%",
         "Value": 70
     },
     {
-        "Max": 42,
+        "Max": 42.0,
         "Min": 4,
         "Name": "T_Set",
         "Unit": "C",

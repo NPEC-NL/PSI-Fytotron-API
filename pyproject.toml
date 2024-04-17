@@ -28,7 +28,8 @@ dependencies = [
 "certifi", 
 "six", 
 "python_dateutil", 
-"urllib3"
+"urllib3",
+"setuptools"
 ]
 
 [tool.setuptools]
@@ -38,5 +39,5 @@ packages = ["fytotron"]
 "Homepage" = "https://github.com/wurDevTim/PSI-Fytotron-API"
 
 [build-system]
-requires = ["setuptools>=43.0.0", "wheel"]
+requires = ["setuptools>=43.0.0", "urllib3>=1.15.1", "six>=1.10", "wheel"]
 build-backend = "setuptools.build_meta"

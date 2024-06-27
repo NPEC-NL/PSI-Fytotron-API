@@ -2,6 +2,7 @@
 import fytotron.swagger_client as swagger_client
 import fytotron.models as models
 
+REQUEST_TIMEOUT = 60
 
 class Fytotron_API():
     """Wrapper around the automatically  generated swagger client.
@@ -37,7 +38,7 @@ class Fytotron_API():
             VariableWrapper
                 List of variables
         """
-        api_response = self.api_instance.info()
+        api_response = self.api_instance.info(_request_timeout=REQUEST_TIMEOUT)
         return models.VariableWrapper.from_dict(api_response)
 
     def get_current_value(self, name: str) -> int:
@@ -52,7 +53,7 @@ class Fytotron_API():
             int
                 This endpoints returns an integer, not a json
         """
-        return self.api_instance.getvar(name)
+        return self.api_instance.getvar(name, _request_timeout=REQUEST_TIMEOUT)
 
     def set_setpoint(self, name, value) -> None:
         """
@@ -65,7 +66,7 @@ class Fytotron_API():
         ----------
             -
         """
-        self.api_instance.setvar(name, value)
+        self.api_instance.setvar(name, value, _request_timeout=REQUEST_TIMEOUT)
 
     def get_monitor_values(self) -> models.MonitorValuesWrapper:
         """
@@ -79,5 +80,5 @@ class Fytotron_API():
                 list of monitoring values
 
         """
-        api_response = self.api_instance.monitor()
+        api_response = self.api_instance.monitor(_request_timeout=REQUEST_TIMEOUT)
         return models.MonitorValuesWrapper.from_dict(api_response)

@@ -15,6 +15,7 @@ We, the NPEC team, believe it's a waist of everyones time if we all have to impl
 Therefore we created he swagger file and a simple python wrapper to integrate the fytotron API.
 
 ## Installation 
+Unfortunately currently only available on test pypi, installable with: python -m pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple psi-fytotron
 `pip install psi-fytotron`  
 Build and tested with python 3.8 on windows 10  
 Cross platform support for Linux, macOS and Windows

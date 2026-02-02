@@ -21,7 +21,7 @@ jobs:
           options: -v ${{ github.workspace }}:/local
           run: >
             openapi-generator-cli generate \
-              -i /local/OpenAPI Specification/PSI_fytotron_API.json \
+              -i /local/OpenAPI_specification/PSI_fytotron_API.json \
               -g python \
               -o /local/fytotron
 

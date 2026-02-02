@@ -36,6 +36,3 @@ jobs:
           echo "https://x-access-token:${PUSH_TOKEN}@github.com/${{ github.repository }}.git"
           git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/${{ github.repository }}.git
           git push
-
-
-git remote set-url origin https://x-access-token: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@github.com/NPEC-NL/PSI-Fytotron-API.git

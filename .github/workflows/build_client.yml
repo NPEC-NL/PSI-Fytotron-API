@@ -55,9 +55,3 @@ jobs:
           git commit -m 'chore: regenerate python client from OpenAPI spec' || echo 'No changes to commit'
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
           git push
-
-      - name: Trigger test_openapi_client workflow
-        uses: peter-evans/workflow-dispatch@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          workflow: test_fytotron_client.yml

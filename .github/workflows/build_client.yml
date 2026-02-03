@@ -24,7 +24,7 @@ jobs:
               -i /local/OpenAPI_specification/PSI_fytotron_API.json \
               -g python \
               -o /local/build
-              --package-name fytotron
+              --additional-properties=packageName=fytotron
 
       - name: Copy generated docs to /docs
         run: |

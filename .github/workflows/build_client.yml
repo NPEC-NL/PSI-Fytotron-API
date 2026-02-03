@@ -26,6 +26,14 @@ jobs:
               -o /local/build \
               --additional-properties=packageName=fytotron
 
+      - name: Copy generated code to /fytotron
+        run: |
+          if [ -d build/fytotron ]; then
+            rm -rf fytotron/
+            mkdir -p fytotron
+            cp -r build/fytotron/* fytotron/
+          fi
+
       - name: Copy generated docs to /docs
         run: |
           if [ -d build/docs ]; then
@@ -51,7 +59,7 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add docs
           git add test
-          git add build
+          git add fytotron
           git commit -m 'chore: regenerate python client from OpenAPI spec' || echo 'No changes to commit'
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
           git push

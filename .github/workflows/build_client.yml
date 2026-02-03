@@ -23,7 +23,24 @@ jobs:
             openapi-generator-cli generate \
               -i /local/OpenAPI_specification/PSI_fytotron_API.json \
               -g python \
-              -o /local/fytotron
+              -o /local/build
+              --package-name fytotron
+
+      - name: Copy generated docs to /docs
+        run: |
+          if [ -d build/docs ]; then
+            rm -rf docs/
+            mkdir -p docs
+            cp -r build/docs/* docs/
+          fi
+
+      - name: Copy python code to /test
+        run: |
+          if [ -d build/test ]; then
+            rm -rf test/
+            mkdir -p test
+            cp -r build/test/* test/
+          fi
 
       - name: Commit and push generated client
         env:
@@ -32,7 +49,15 @@ jobs:
           echo "Using GITHUB_TOKEN for authentication"
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add fytotron
+          git add docs
+          git add test
+          git add build
           git commit -m 'chore: regenerate python client from OpenAPI spec' || echo 'No changes to commit'
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
           git push
+
+      - name: Trigger test_openapi_client workflow
+        uses: peter-evans/workflow-dispatch@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          workflow: test_fytotron_client.yml

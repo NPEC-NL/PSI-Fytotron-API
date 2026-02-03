@@ -23,7 +23,7 @@ jobs:
             openapi-generator-cli generate \
               -i /local/OpenAPI_specification/PSI_fytotron_API.json \
               -g python \
-              -o /local/build
+              -o /local/build \
               --additional-properties=packageName=fytotron
 
       - name: Copy generated docs to /docs

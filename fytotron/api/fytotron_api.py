@@ -20,12 +20,12 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictFloat, StrictInt, StrictStr
 from typing import List, Union
 from typing_extensions import Annotated
-from openapi_client.models.info_values import InfoValues
-from openapi_client.models.monitor_values import MonitorValues
+from fytotron.models.info_values import InfoValues
+from fytotron.models.monitor_values import MonitorValues
 
-from openapi_client.api_client import ApiClient, RequestSerialized
-from openapi_client.api_response import ApiResponse
-from openapi_client.rest import RESTResponseType
+from fytotron.api_client import ApiClient, RequestSerialized
+from fytotron.api_response import ApiResponse
+from fytotron.rest import RESTResponseType
 
 
 class FytotronApi:

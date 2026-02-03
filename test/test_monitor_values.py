@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.monitor_values import MonitorValues
+from fytotron.models.monitor_values import MonitorValues
 
 class TestMonitorValues(unittest.TestCase):
     """MonitorValues unit test stubs"""

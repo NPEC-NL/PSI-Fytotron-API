@@ -14,6 +14,6 @@
 """  # noqa: E501
 
 # import models into model package
-from openapi_client.models.info_values import InfoValues
-from openapi_client.models.monitor_values import MonitorValues
+from fytotron.models.info_values import InfoValues
+from fytotron.models.monitor_values import MonitorValues
 

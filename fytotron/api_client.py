@@ -28,11 +28,11 @@ from urllib.parse import quote
 from typing import Tuple, Optional, List, Dict, Union
 from pydantic import SecretStr
 
-from openapi_client.configuration import Configuration
-from openapi_client.api_response import ApiResponse, T as ApiResponseT
-import openapi_client.models
-from openapi_client import rest
-from openapi_client.exceptions import (
+from fytotron.configuration import Configuration
+from fytotron.api_response import ApiResponse, T as ApiResponseT
+import fytotron.models
+from fytotron import rest
+from fytotron.exceptions import (
     ApiValueError,
     ApiException,
     BadRequestException,
@@ -457,7 +457,7 @@ class ApiClient:
             if klass in self.NATIVE_TYPES_MAPPING:
                 klass = self.NATIVE_TYPES_MAPPING[klass]
             else:
-                klass = getattr(openapi_client.models, klass)
+                klass = getattr(fytotron.models, klass)
 
         if klass in self.PRIMITIVE_TYPES:
             return self.__deserialize_primitive(data, klass)

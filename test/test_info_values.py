@@ -15,7 +15,7 @@
 
 import unittest
 
-from openapi_client.models.info_values import InfoValues
+from fytotron.models.info_values import InfoValues
 
 class TestInfoValues(unittest.TestCase):
     """InfoValues unit test stubs"""

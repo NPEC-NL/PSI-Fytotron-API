@@ -1,4 +1,4 @@
-# openapi_client.FytotronApi
+# fytotron.FytotronApi
 
 All URIs are relative to *https://localhost:44339/fyo/rest*
 
@@ -20,13 +20,13 @@ Returns the current value of the variable
 * Api Key Authentication (ApiKeyAuth):
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import fytotron
+from fytotron.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://localhost:44339/fyo/rest
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = fytotron.Configuration(
     host = "https://localhost:44339/fyo/rest"
 )
 
@@ -42,9 +42,9 @@ configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with fytotron.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.FytotronApi(api_client)
+    api_instance = fytotron.FytotronApi(api_client)
     name = 'name_example' # str | variable name
 
     try:
@@ -96,14 +96,14 @@ Returns all setpoints and actual values in the database.
 * Api Key Authentication (ApiKeyAuth):
 
 ```python
-import openapi_client
-from openapi_client.models.info_values import InfoValues
-from openapi_client.rest import ApiException
+import fytotron
+from fytotron.models.info_values import InfoValues
+from fytotron.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://localhost:44339/fyo/rest
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = fytotron.Configuration(
     host = "https://localhost:44339/fyo/rest"
 )
 
@@ -119,9 +119,9 @@ configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with fytotron.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.FytotronApi(api_client)
+    api_instance = fytotron.FytotronApi(api_client)
 
     try:
         # Returns all setpoints and actual values in the database.
@@ -169,14 +169,14 @@ Returns the current status of the fytotron
 * Api Key Authentication (ApiKeyAuth):
 
 ```python
-import openapi_client
-from openapi_client.models.monitor_values import MonitorValues
-from openapi_client.rest import ApiException
+import fytotron
+from fytotron.models.monitor_values import MonitorValues
+from fytotron.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://localhost:44339/fyo/rest
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = fytotron.Configuration(
     host = "https://localhost:44339/fyo/rest"
 )
 
@@ -192,9 +192,9 @@ configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with fytotron.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.FytotronApi(api_client)
+    api_instance = fytotron.FytotronApi(api_client)
 
     try:
         # Returns the current status of the fytotron
@@ -242,13 +242,13 @@ Set the setpoint value
 * Api Key Authentication (ApiKeyAuth):
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import fytotron
+from fytotron.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://localhost:44339/fyo/rest
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = fytotron.Configuration(
     host = "https://localhost:44339/fyo/rest"
 )
 
@@ -264,9 +264,9 @@ configuration.api_key['ApiKeyAuth'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['ApiKeyAuth'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with fytotron.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.FytotronApi(api_client)
+    api_instance = fytotron.FytotronApi(api_client)
     name = 'name_example' # str | variable name
     value = 3.4 # float | value to se the variable to
 

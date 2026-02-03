@@ -27,12 +27,12 @@ jobs:
 
       - name: Commit and push generated client
         env:
-          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "Token last 4 chars: ...${PUSH_TOKEN: -4} (rest masked)"
+          echo "Using GITHUB_TOKEN for authentication"
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add fytotron
           git commit -m 'chore: regenerate python client from OpenAPI spec' || echo 'No changes to commit'
-          git remote set-url origin https://x-access-token:${PUSH_TOKEN}@github.com/${{ github.repository }}.git
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
           git push

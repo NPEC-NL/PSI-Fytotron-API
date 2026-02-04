@@ -34,13 +34,19 @@ jobs:
             cp -r build/fytotron/* fytotron/
           fi
 
-      - name: Copy generated docs to /docs
+      - name: Copy generated docs to /docs/docs
         run: |
           if [ -d build/docs ]; then
             rm -rf docs/
             mkdir -p docs
-            cp -r build/docs/* docs/
+            mkdir -p docs/docs
+            cp -r build/docs/* docs/docs/
+            cp build/README.md docs/README_FYT.md
           fi
+
+      - name: Create docs README and changelog
+        run: |
+          echo "../README.md" > docs/README.md
 
       - name: Copy python code to /test
         run: |

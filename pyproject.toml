@@ -28,9 +28,7 @@ dependencies = [
   "certifi",
   "six",
   "python_dateutil>=2.8.2",
-  "python-dotenv",
   "urllib3>=2.1.0,<3.0.0",
-  "setuptools",
   "pydantic>=2",
   "typing-extensions>=4.7.1"
 ]
@@ -43,6 +41,14 @@ test = [
   "flake8>=4.0.0",
   "types-python-dateutil>=2.8.19.14",
   "mypy>=1.5"
+]
+
+build = [
+  "build >= 1.0.3"
+  "setuptools >= 21.0.0"
+  "twine >= 4.0.2"
+  "mkdocs >= 1.5.3"
+  "mkdocs-material >= 9.5.6"
 ]
 
 [tool.setuptools]

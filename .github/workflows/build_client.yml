@@ -41,10 +41,9 @@ jobs:
             mkdir -p docs
             mkdir -p docs/docs
             cp -r build/docs/* docs/docs/
-            cp build/README.md docs/README_FYT.md
           fi
 
-      - name: Create docs README and changelog
+      - name: Create docs README
         run: |
           echo "../README.md" > docs/README.md
 

@@ -43,9 +43,9 @@ jobs:
             cp -r build/docs/* docs/docs/
           fi
 
-      - name: Create docs README
+      - name: copy README to docs section
         run: |
-          echo "../README.md" > docs/README.md
+          cp README.md docs/README.md
 
       - name: Copy python code to /test
         run: |

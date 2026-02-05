@@ -3,25 +3,13 @@ site_description: python implementation of the PSI fytotron API
 
 theme:
   name: "material"
-repo_name: wurDevTim/PSI-Fytotron-API
-repo_url: https://github.com/wurDevTim/PSI-Fytotron-API
+repo_name: NPEC-NL/PSI-Fytotron-API
+repo_url: https://github.com/NPEC-NL/PSI-Fytotron-API
 
 nav:
-  - Home: "README.md"
-  - Code: 
-    - "API": "Code/fytotron_API.md"
-    - "models": "Code/models.md"
-    - Swagger_docs:
-      - "README": "Code/Swagger_docs/README.md"
-      - "FytotronApi": "Code/Swagger_docs/FytotronApi.md"
-      - "GetvarApi": "Code/Swagger_docs/GetvarApi.md"
-      - "InfoApi": "Code/Swagger_docs/InfoApi.md"
-      - "InfoValues": "Code/Swagger_docs/InfoValues.md"
-      - "JsonGetvarResult": "Code/Swagger_docs/JsonGetvarResult.md"
-      - "JsonInfoResult": "Code/Swagger_docs/JsonInfoResult.md"
-      - "JsonMonitorResult": "Code/Swagger_docs/JsonMonitorResult.md"
-      - "MonitorApi": "Code/Swagger_docs/MonitorApi.md"
-      - "MonitorValues": "Code/Swagger_docs/MonitorValues.md"
-      - "SetvarApi": "Code/Swagger_docs/SetvarApi.md"
+  - README: "README.md"
+  - Docs: 
+    - FytotronApi: "docs/FytotronApi.md"
+    - InfoValues: "docs/InfoValues.md"
+    - MonitorValues: "docs/MonitorValues.md"
   - Changelog: "CHANGELOG.md"
-

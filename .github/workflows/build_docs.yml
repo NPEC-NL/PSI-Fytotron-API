@@ -1,0 +1,41 @@
+name: Build and Deploy Documentation
+
+on:
+  workflow_run:
+    workflows: ["Generate Python Client from OpenAPI Spec"]
+    types:
+      - completed
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run only on main branch
+        if: github.event.workflow_run.head_branch != 'main'
+        run: echo "Not on main branch, skipping." && exit 0
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.8'
+
+      - name: Install dependencies
+        run: |
+          pip install mkdocs-material
+
+      - name: Copy README.md to docs/
+        run: |
+          cp README.md docs/README.md
+
+      - name: Build documentation
+        run: |
+          mkdocs build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site

@@ -54,9 +54,12 @@ build = [
 [tool.setuptools]
 packages = ["fytotron"]
 
+[tool.setuptools_scm]
+write_to = "fytotron/_version.py"
+
 [project.urls]  # Optional
 "Homepage" = "https://github.com/wurDevTim/PSI-Fytotron-API"
 
 [build-system]
-requires = ["setuptools>=43.0.0", "urllib3>=1.15.1", "six>=1.10", "wheel"]
+requires = ["setuptools>=45", "setuptools-scm[toml]>=6.2", "urllib3>=1.15.1", "six>=1.10", "wheel"]
 build-backend = "setuptools.build_meta"

@@ -1,9 +1,10 @@
 name: Unittest
 
 on:
-  push:
-  pull_request:
-  workflow_dispatch:
+  workflow_run:
+    workflows: ["Generate Python Client from OpenAPI Spec"]
+    types:
+      - completed
 
 permissions:
   contents: read
@@ -15,6 +16,10 @@ jobs:
       matrix:
         python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
     steps:
+      - name: Run only on main branch
+        if: github.event.workflow_run.head_branch != 'main'
+        run: echo "Not on main branch, skipping." && exit 0
+
       - uses: actions/checkout@v4
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4

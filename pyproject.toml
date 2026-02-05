@@ -1,6 +1,5 @@
 [project]
 name = "psi-fytotron"
-version = "0.1.4"
 description = "Python API implementation of PSI fytotron API"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -9,6 +8,7 @@ license = {file = "LICENSE.txt"}
 maintainers = [
   {name = "NPEC WUR"} # Optional
 ]
+dynamic = ["version"]
 
 classifiers = [
 'Development Status :: 3 - Alpha',

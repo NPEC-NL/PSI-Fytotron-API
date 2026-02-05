@@ -7,14 +7,16 @@
 </p>
 
 - [Documentation](https://wurDevTim.github.io/PSI-Fytotron-API) <br>
-- [Source Code](https://github.com/wurDevTim/PSI-Fytotron-API) <br>
+- [Source Code](https://github.com/NPEC-NL/PSI-Fytotron-API) <br>
 ---
 Photon System Instruments (PSI) develivers equipment accross the globe. 
 Most of their cells are controlled by a fytotron PC, for which they also provide an API.
 We, the NPEC team, believe it's a waist of everyones time if we all have to implement the same code.
-Therefore we created he swagger file and a simple python wrapper to integrate the fytotron API.
+Therefore we created an OpenAPI specification file and use the [Openapi Generator](https://github.com/openapitools/openapi-generator) to generate this package.
 
-## Installation 
+
+
+## Installation & Usage
 Unfortunately currently only available on test pypi, installable with: python -m pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple psi-fytotron
 `pip install psi-fytotron`  
 Build and tested with python 3.8 on windows 10  
@@ -23,35 +25,67 @@ Cross platform support for Linux, macOS and Windows
 ## Example implementation
 Uses a .env file with the following fields:
 ```
-URL: <The url or ip-address of your fytotron machine >
-PORT: <Poort on which the fytotron API is available>
+URL: <"http://<ip-address/path>:<poort>/fyto/rest"
 TOKEN: <Fytotron API access token>
 ```
 The environment files have one additional depency: `pip install python-dotenv`
 Example code:
-https://github.com/wurDevTim/PSI-Fytotron-API/blob/main/example_implementation.py?plain=1#L2-L32
+https://github.com/NPEC-NL/PSI-Fytotron-API/blob/main/example_implementation.py?plain=1#L2-L32
 
 
-## Contributing
-### Build requirements:
-build >= 1.0.3
-setuptools >= 21.0.0
-twine >= 4.0.2
-mkdocs >= 1.5.3
-mkdocs-material >= 9.5.6
+# Contributing
+We welcome contributions! 
+If you encounter bugs, have feature requests, or want to suggest improvements, please [create an issue](https://github.com/NPEC-NL/PSI-Fytotron-API/issues) and provide a clear description.
+
+### Setting up a Development Environment
+Requires Python 3.9+
+1. **Create a virtual environment (venv):**
+	```sh
+	python -m venv .venv
+	```
+2. **Activate the venv:**
+	- On Windows:
+	  ```sh
+	  .venv\Scripts\activate
+	  ```
+	- On macOS/Linux:
+	  ```sh
+	  source .venv/bin/activate
+	  ```
+3. **Install the package with build and test dependencies:**
+	```sh
+	pip install .[build, test]
 
 
-### Updating the swagger file
-The API is automatically generated from the [swagger file](https://github.com/wurDevTim/PSI-Fytotron-API/blob/main/swagger_file/PSI_fytotron_API.json) with the [swagger editor](https://editor.swagger.io/).
-After generation unpack the zip and move them to the following location:
-- Move The `docs` folder to: `docs/Code/Swagger_docs` and replace all occurances of `..Readme.md` with `readme.md`
-- `REAME.md` is copied to: `docs/Code/Swagger_docs` and the reference updates to `./`
-- The code from `swagger_client` to `fytotron/swagger_client`. Replace all occurances of `from swagger_client` with `from fytotron.swagger_client`
+### Updating the OpenAPI specification file
+The API is automatically generated from the [OpenAPI specification file](https://github.com/NPEC-NL/PSI-Fytotron-API/blob/main/OpenAPI_specification/PSI_fytotron_API.json) with the [openapi generator cli](https://github.com/OpenAPITools/openapi-generator-cli).
+The workflows automatically build the client and copy the files to the right folders.
 
-### Documentation
+
+# Documentation
 Build with [mkdocs-material](https://squidfunk.github.io/mkdocs-material/)
 
-## Authors
-Tim van Daalen and Pinglin Zhang
-NPEC
-https://www.npec.nl/
+## Documentation for API Endpoints
+All URIs are relative to *https://localhost:44339/fyo/rest*
+
+Class | Method | HTTP request | Description
+------------ | ------------- | ------------- | -------------
+*FytotronApi* | [**getvar**](docs/FytotronApi.md#getvar) | **GET** /getvar | Returns the current value of the variable
+*FytotronApi* | [**info**](docs/FytotronApi.md#info) | **GET** /info | Returns all setpoints and actual values in the database.
+*FytotronApi* | [**monitor**](docs/FytotronApi.md#monitor) | **GET** /monitor | Returns the current status of the fytotron
+*FytotronApi* | [**setvar**](docs/FytotronApi.md#setvar) | **POST** /setvar | Set the setpoint value
+
+## Documentation For Models
+ - [InfoValues](docs/InfoValues.md)
+ - [MonitorValues](docs/MonitorValues.md)
+
+<a id="documentation-for-authorization"></a>
+## Documentation For Authorization
+
+Authentication schemes defined for the API:
+<a id="ApiKeyAuth"></a>
+### ApiKeyAuth
+
+- **Type**: API key
+- **API key parameter name**: X-Auth-Token
+- **Location**: HTTP header

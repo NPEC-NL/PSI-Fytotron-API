@@ -14,33 +14,33 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Checkout triggering branch
+        run: git checkout ${GITHUB_REF_NAME}
+
       - name: Generate Python client using OpenAPI Generator
-        uses: addnab/docker-run-action@v3
+        uses: openapi-generators/openapitools-generator-action@v1
         with:
-          image: openapitools/openapi-generator-cli
-          options: -v ${{ github.workspace }}:/local
-          run: >
-            openapi-generator-cli generate \
-              -i /local/OpenAPI_specification/PSI_fytotron_API.json \
-              -g python \
-              -o /local/build \
-              --additional-properties=packageName=fytotron
+          generator: python
+          openapi-file: OpenAPI_specification/PSI_fytotron_API.json
+          command-args: >-
+            -o generated
+            --additional-properties=packageName=fytotron
 
       - name: Copy generated code to /fytotron
         run: |
-          if [ -d build/fytotron ]; then
+          if [ -d generated/fytotron ]; then
             rm -rf fytotron/
             mkdir -p fytotron
-            cp -r build/fytotron/* fytotron/
+            cp -r generated/fytotron/* fytotron/
           fi
 
       - name: Copy generated docs to /docs/docs
         run: |
-          if [ -d build/docs ]; then
+          if [ -d generated/docs ]; then
             rm -rf docs/
             mkdir -p docs
             mkdir -p docs/docs
-            cp -r build/docs/* docs/docs/
+            cp -r generated/docs/* docs/docs/
           fi
 
       - name: copy README to docs section
@@ -49,10 +49,10 @@ jobs:
 
       - name: Copy python code to /test
         run: |
-          if [ -d build/test ]; then
+          if [ -d generated/test ]; then
             rm -rf test/
             mkdir -p test
-            cp -r build/test/* test/
+            cp -r generated/test/* test/
           fi
 
       - name: Commit and push generated client
@@ -67,4 +67,4 @@ jobs:
           git add fytotron
           git commit -m 'chore: regenerate python client from OpenAPI spec' || echo 'No changes to commit'
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
-          git push
+          git push origin HEAD:${GITHUB_REF_NAME}

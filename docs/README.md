@@ -66,7 +66,7 @@ The workflows automatically build the client and copy the files to the right fol
 Build with [mkdocs-material](https://squidfunk.github.io/mkdocs-material/)
 
 ## Documentation for API Endpoints
-All URIs are relative to *https://localhost:44339/fyo/rest*
+All URIs are relative to *https://localhost:8000/fyto/rest*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

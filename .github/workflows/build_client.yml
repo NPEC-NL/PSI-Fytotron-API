@@ -3,6 +3,8 @@ name: Generate Python Client from OpenAPI Spec
 on:
   workflow_dispatch:
   push:
+    branches:
+      - '**'
     paths:
       - 'OpenAPI_specification/PSI_fytotron_API.json'
       - '.github/workflows/generate-openapi-client.yml'

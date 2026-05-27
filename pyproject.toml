@@ -56,6 +56,7 @@ packages = ["fytotron"]
 
 [tool.setuptools_scm]
 write_to = "fytotron/_version.py"
+local_scheme = "no-local-version"
 
 [project.urls]  # Optional
 "Homepage" = "https://github.com/NPEC-NL/PSI-Fytotron-API"

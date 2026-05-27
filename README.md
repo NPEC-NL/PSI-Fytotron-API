@@ -10,9 +10,8 @@
 - [Source Code](https://github.com/NPEC-NL/PSI-Fytotron-API) <br>
 ---
 Photon System Instruments (PSI) develivers equipment accross the globe. 
-Most of their cells are controlled by a fytotron PC, for which they also provide an API.
-We, the NPEC team, believe it's a waist of everyones time if we all have to implement the same code.
-Therefore we created an OpenAPI specification file and use the [Openapi Generator](https://github.com/openapitools/openapi-generator) to generate this package.
+Most of their cells are controlled by a fytotron PC, for which they also provide an optional API.
+To simplify the implementation and sharing of analysis workflows, we created an OpenAPI specification file and use the [Openapi Generator](https://github.com/openapitools/openapi-generator) to generate this package.
 
 
 

@@ -6,7 +6,7 @@
 <img src="https://badge.fury.io/py/psi-fytotron.svg" alt="PyPI version"/></a>
 </p>
 
-- [Documentation](https://wurDevTim.github.io/PSI-Fytotron-API) <br>
+- [Documentation](https://npec-nl.github.io/PSI-Fytotron-API/) <br>
 - [Source Code](https://github.com/NPEC-NL/PSI-Fytotron-API) <br>
 ---
 Photon System Instruments (PSI) delivers equipment across the globe. 

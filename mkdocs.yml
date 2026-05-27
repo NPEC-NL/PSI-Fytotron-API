@@ -12,4 +12,3 @@ nav:
     - FytotronApi: "docs/FytotronApi.md"
     - InfoValues: "docs/InfoValues.md"
     - MonitorValues: "docs/MonitorValues.md"
-  - Changelog: "CHANGELOG.md"
